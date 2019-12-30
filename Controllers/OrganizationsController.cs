@@ -67,7 +67,6 @@ namespace Hl7Fhir.R4.Api.Controllers
         [HttpPut("{Id}")]
         public async Task<ActionResult<OrganizationCreationResponse>> Put(Guid Id , [FromBody] OrganizationForCreation model)
         {
-            Single
             try
             {
                 var result = await _orgRepository.UpdateAsync(Id, model);
