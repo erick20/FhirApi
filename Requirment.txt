@@ -1,0 +1,97 @@
+﻿GET:
+
+Request: 
+ -api/organization
+ -api/organization/{id}
+
+Response:
+
+	Success:
+			{
+		  "data": {
+			"active": true,
+			"name": "Scranton Health Network",
+			"type": {
+			  "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+			  "code": "prov",
+			  "display": "Healthcare Provider"
+			},
+			"telecom": [
+			  {
+				"system": "phone",
+				"value": "555-123-4567"
+			  }
+			],
+			"address": [
+			  {
+				"use": "work",
+				"type": "both",
+				"line": [
+				  "123 SHN Road"
+				],
+				"city": "Scranton",
+				"state": "PA",
+				"postalCode": "18503",
+				"country": "USA"
+			  }
+			]
+		  }
+		}
+
+  Failure:
+	  {
+	  "error": {
+		"code": 400,
+		"message": "Organization resource could not be retreived."
+	  }
+	}
+
+
+
+POST:
+
+Request:
+{
+  "name": "Scranton Health Network",
+  "type": {
+    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+    "code": "prov",
+    "display": "Healthcare Provider"
+  },
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "555-123-4567"
+    }
+  ],
+  "address": [
+    {
+      "use": "work",
+      "type": "both",
+      "line": [
+        "123 SHN Road"
+      ],
+      "city": "Scranton",
+      "state": "PA",
+      "postalCode": "18503",
+      "country": "USA"
+    }
+  ]
+}
+
+Response:
+	Success:
+				{
+		  "data": {
+			"organizationId": "2d73c4fb-bef4-42e6-83d9-ea5de62b4e2c"
+		  }
+		}
+
+	Failure:
+	  {
+	  "error": {
+		"code": 400,
+		"message": "Organization resource could not be retreived."
+	  }
+	}
+
